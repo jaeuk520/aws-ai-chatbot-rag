@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+      - echo "Creating config.js with environment variables..."
+      - |
+        cat << EOF > frontend/config.js
+        window.APP_CONFIG = {
+          USER_POOL_ID: '${USER_POOL_ID}',
+          CLIENT_ID: '${CLIENT_ID}',
+          REGION: '${REGION}'
+        };
+        EOF
+  build:
+    commands:
+  post_build:
+    commands:
+      - echo "Syncing files to S3..."
+      - aws s3 sync frontend/ s3://${S3_BUCKET_NAME} --delete
+      - echo "Invalidating CloudFront distribution..."
+      - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'frontend'

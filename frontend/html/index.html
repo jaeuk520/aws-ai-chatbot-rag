@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBot - 검색 증강 생성 기반 AI 챗봇 서비스</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="options-container">
+            <div class="logo">
+                <!-- SVG 로고를 여기에 삽입 -->
+            </div>
+            <div class="options-ai">
+                <p>AI Models</p>
+                <div class="option-ai selected" data-model="claude">
+                    <img src="../img/claude.png" alt="claude 아이콘">
+                    <p>Anthropic Claude</p>
+                </div>
+                <!-- <div class="option-ai">
+                    <img src="aws.png" alt="aws 아이콘">
+                    <p>Titan Text G1</p>
+                </div> -->
+            </div>
+            <div class="options-conv">
+                <p>Conversation Mode</p>
+                <div class="option-conv selected">
+                    <img src="../img/talk.png" alt="claude 아이콘">
+                    <p>일반 대화</p>
+                </div>
+                <div class="option-conv">
+                    <img src="../img/search.png" alt="aws 아이콘">
+                    <p>금융 솔루션</p>
+                </div>
+            </div>
+            <div class="auth-container">
+                <p id="userEmail" class="user-email"></p>
+                <button id="logoutButton" class="auth-button">로그아웃</button>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- 채팅 메시지 동적으로 추가 -->
+            </div>
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <textarea id="userInput" placeholder="메시지 입력" rows="1"></textarea>
+                    <div class="svg-container" id="sendButton">
+                        <svg width="20" height="20" viewBox="0 0 25 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.3423 7.48727L14.7565 6.07306L19.7063 11.0228L20.0598 11.3764C20.6456 11.9621 20.6456 12.9119 20.0598 13.4977L19.7063 13.8512L14.7565 18.801L13.3423 17.3868L17.2921 13.437L4.50082 13.437V11.437L17.2921 11.437L13.3423 7.48727Z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <!-- <button class="send-button" id="sendButton">전송</button> -->
+            </div>
+        </div>
+    </div>
+    <script src="../config.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

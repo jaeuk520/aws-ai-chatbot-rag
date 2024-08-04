@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBot - 검색 증강 생성 기반 AI 챗봇 서비스</title>
+    <link rel="stylesheet" href="../css/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@latest/dist/amazon-cognito-identity.min.js"></script>
+</head>
+<body>
+    <div class="main-content">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>나의 일상을 더 빠르고 편리하게</h1>
+                <p>검색 증강 생성 기반 AI 챗봇 서비스, <span class="highlight">KBot</span></p>
+                <a href="#" id="signupButton" class="login-button">회원가입</a>
+                <a href="#" id="loginButton" class="signup-button">로그인</a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="bottom-image"></div> -->
+    <!-- 로그인 팝업 -->
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <h2>LOGIN</h2>
+            <input type="email" placeholder="이메일" required>
+            <input type="password" placeholder="비밀번호" required>
+            <button class="popup-button">로그인</button>
+            <button class="popup-button">회원가입</button>
+        </div>
+    </div>
+    <!-- 회원가입 팝업 -->
+    <div id="signupPopup" class="popup">
+        <div class="popup-content">
+            <h2>SIGNUP</h2>
+            <input type="email" placeholder="이메일" required>
+            <input type="password" placeholder="비밀번호" required>
+            <button class="popup-button">회원가입</button>
+            <button class="popup-button">로그인하러 가기</button>
+        </div>
+    </div>
+    <!-- 이메일 인증 팝업 -->
+    <div id="verificationPopup" class="popup">
+        <div class="popup-content">
+            <h2>Verification</h2>
+            <input type="email" placeholder="이메일" required>
+            <input type="number" placeholder="인증번호" required>
+            <button class="popup-button">인증하기</button>
+        </div>
+    </div>
+    <script src="../config.js"></script>
+    <script src="../js/main-script.js"></script>
+</body>
+</html>
